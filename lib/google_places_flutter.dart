@@ -1,11 +1,11 @@
-library google_places_flutter;
+library google_places_autocomplete_flutter;
 
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_places_flutter/model/place_details.dart';
-import 'package:google_places_flutter/model/prediction.dart';
+import 'package:google_places_autocomplete_flutter/model/place_details.dart';
+import 'package:google_places_autocomplete_flutter/model/prediction.dart';
 
 import 'package:rxdart/subjects.dart';
 import 'package:dio/dio.dart';
