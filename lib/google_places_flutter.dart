@@ -18,6 +18,8 @@ class GooglePlaceAutoCompleteTextField extends StatefulWidget {
   final String? googleAPIKey;
   int? debounceTime = 600;
   List<String>? countries = [];
+  List<String>? types = [];
+  String? language;
   TextEditingController? textEditingController = TextEditingController();
 
   GooglePlaceAutoCompleteTextField(
@@ -30,6 +32,8 @@ class GooglePlaceAutoCompleteTextField extends StatefulWidget {
       this.textStyle = const TextStyle(),
       this.countries,
       this.getPlaceDetailWithLatLng,
+      this.types,
+      this.language,
       });
 
   @override
@@ -75,6 +79,14 @@ class _GooglePlaceAutoCompleteTextFieldState
           url = url + "|" + "country:" + country;
         }
       }
+    }
+
+    if (widget.types != null) {
+      url += '&types=${widget.types?.join("|")}';
+    }
+
+    if (widget.language != null) {
+      url += '&language=${widget.language!}';
     }
 
     Response response = await dio.get(url);
