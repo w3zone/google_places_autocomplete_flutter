@@ -8,7 +8,7 @@ forked from google_places_flutter
 dependencies:
   flutter:
     sdk: flutter
-  google_places_flutter: <last-version>
+  google_places_autocomplete_flutter: ^1.0.3
   
 ```  
 
@@ -16,7 +16,7 @@ dependencies:
 
 
 ```
-    GooglePlaceAutoCompleteTextField(
+    GooglePlaceAutoCompleteFlutterTextField(
         textEditingController: controller,
         googleAPIKey: "YOUR_GOOGLE_API_KEY",
         inputDecoration: InputDecoration()
@@ -38,5 +38,5 @@ dependencies:
  You can customize a text field input decoration and debounce time 
 
 # Screenshorts
-<img src="sample.jpg" height="400">
+<img src="https://raw.githubusercontent.com/w3zone/google_places_autocomplete_flutter/master/sample.jpg" height="400">
 

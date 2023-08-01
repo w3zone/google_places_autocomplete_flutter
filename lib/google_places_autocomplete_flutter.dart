@@ -8,7 +8,7 @@ import 'package:dio/dio.dart';
 import 'package:rxdart/rxdart.dart';
 
 // ignore: must_be_immutable
-class GooglePlaceAutoCompleteTextField extends StatefulWidget {
+class GooglePlaceAutoCompleteFlutterTextField extends StatefulWidget {
   final InputDecoration? inputDecoration;
   final ItemClick? itmClick;
   final GetPlaceDetailswWithLatLng? getPlaceDetailWithLatLng;
@@ -22,7 +22,7 @@ class GooglePlaceAutoCompleteTextField extends StatefulWidget {
   String? language;
   TextEditingController? textEditingController = TextEditingController();
 
-  GooglePlaceAutoCompleteTextField(
+  GooglePlaceAutoCompleteFlutterTextField(
       {required this.textEditingController,
       required this.googleAPIKey,
       this.inputDecoration = const InputDecoration(),
@@ -37,12 +37,12 @@ class GooglePlaceAutoCompleteTextField extends StatefulWidget {
       });
 
   @override
-  _GooglePlaceAutoCompleteTextFieldState createState() =>
-      _GooglePlaceAutoCompleteTextFieldState();
+  _GooglePlaceAutoCompleteFlutterTextFieldState createState() =>
+      _GooglePlaceAutoCompleteFlutterTextFieldState();
 }
 
-class _GooglePlaceAutoCompleteTextFieldState
-    extends State<GooglePlaceAutoCompleteTextField> {
+class _GooglePlaceAutoCompleteFlutterTextFieldState
+    extends State<GooglePlaceAutoCompleteFlutterTextField> {
   final subject = new PublishSubject<String>();
   OverlayEntry? _overlayEntry;
   List<Prediction> alPredictions = [];
