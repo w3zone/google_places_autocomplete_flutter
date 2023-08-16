@@ -17,3 +17,7 @@
 ## 1.0.5
 
 * Some minor changes for documenting purposes
+
+## 1.0.6
+
+* Bug fixes

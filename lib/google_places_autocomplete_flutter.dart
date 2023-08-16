@@ -37,6 +37,8 @@ class GooglePlaceAutoCompleteFlutterTextField extends StatefulWidget {
       this.getPlaceDetailWithLatLng,
       this.types,
       this.language,
+      this.autcompleteBaseUrl,
+      this.placesBaseUrl,
       });
 
   @override

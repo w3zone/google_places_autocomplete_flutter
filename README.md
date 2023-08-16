@@ -8,7 +8,7 @@ forked from google_places_flutter
 dependencies:
   flutter:
     sdk: flutter
-  google_places_autocomplete_flutter: ^1.0.5
+  google_places_autocomplete_flutter: ^1.0.6
   
 ```  
 
