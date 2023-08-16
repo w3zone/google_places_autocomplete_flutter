@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_places_autocomplete_flutter/google_places_flutter.dart';
+import 'package:google_places_autocomplete_flutter/google_places_autocomplete_flutter.dart';
 import 'package:google_places_autocomplete_flutter/model/prediction.dart';
 
 void main() => runApp(MyApp());
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
   placesAutoCompleteTextField() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20),
-      child: GooglePlaceAutoCompleteTextField(
+      child: GooglePlaceAutoCompleteFlutterTextField(
           textEditingController: controller,
           googleAPIKey: "YOUR_GOOGLE_API_KEY",
           inputDecoration: InputDecoration(hintText: "Search your location"),
