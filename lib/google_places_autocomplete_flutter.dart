@@ -22,6 +22,9 @@ class GooglePlaceAutoCompleteFlutterTextField extends StatefulWidget {
   String? language;
   TextEditingController? textEditingController = TextEditingController();
 
+  String? autcompleteBaseUrl;
+  String? placesBaseUrl;
+
   GooglePlaceAutoCompleteFlutterTextField(
       {required this.textEditingController,
       required this.googleAPIKey,
@@ -65,9 +68,12 @@ class _GooglePlaceAutoCompleteFlutterTextFieldState
   }
 
   getLocation(String text) async {
+
+    String googleApisBaseUrl = "https://maps.googleapis.com/maps/api/place/autocomplete/json";
+    
     Dio dio = new Dio();
     String url =
-        "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$text&key=${widget.googleAPIKey}";
+        "${widget.autcompleteBaseUrl ?? googleApisBaseUrl}?input=$text&key=${widget.googleAPIKey}";
 
     if (widget.countries != null) {
       for (int i = 0; i < widget.countries!.length; i++) {
@@ -177,9 +183,10 @@ class _GooglePlaceAutoCompleteFlutterTextFieldState
   }
 
   Future<Response?> getPlaceDetailsFromPlaceId(Prediction prediction) async {
+    String? googleApisBaseUrl = "https://maps.googleapis.com/maps/api/place/details/json";
 
     var url =
-        "https://maps.googleapis.com/maps/api/place/details/json?placeid=${prediction.placeId}&key=${widget.googleAPIKey}";
+        "${widget.placesBaseUrl ?? googleApisBaseUrl}?placeid=${prediction.placeId}&key=${widget.googleAPIKey}";
     Response response = await Dio().get(
       url,
     );

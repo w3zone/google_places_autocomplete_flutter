@@ -8,7 +8,7 @@ forked from google_places_flutter
 dependencies:
   flutter:
     sdk: flutter
-  google_places_autocomplete_flutter: ^1.0.3
+  google_places_autocomplete_flutter: ^1.0.5
   
 ```  
 
@@ -23,6 +23,8 @@ dependencies:
         debounceTime: 800 // default 600 ms,
         countries: ["in","fr"],// optional by default null is set
         isLatLngRequired:true,// if you required coordinates from place detail
+        autcompleteBaseUrl: "", // if provided will use it as a base url for loading autocomplate data
+        placesBaseUrl: "", // if provided will use it as a base url for loading place details
         getPlaceDetailWithLatLng: (Prediction prediction) {
          // this method will return latlng with place detail
         print("placeDetails" + prediction.lng.toString());
